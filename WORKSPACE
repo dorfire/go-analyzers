@@ -30,4 +30,4 @@ load("//:repositories.bzl", "go_repositories")
 # gazelle:repository_macro repositories.bzl%go_repositories
 go_repositories()
 
-gazelle_dependencies(go_env = {"GOFLAGS": "-mod=readonly"})
+gazelle_dependencies()
