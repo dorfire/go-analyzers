@@ -18,12 +18,9 @@ var Analyzer = &analysis.Analyzer{
 
 func run(pass *analysis.Pass) (res any, err error) {
 	astInspector := pass.ResultOf[inspect.Analyzer].(*inspector.Inspector)
-	astInspector.Preorder([]ast.Node{(ast.Expr)(nil)}, func(node ast.Node) {
-		switch e := node.(type) {
-		case *ast.InterfaceType:
-			if len(e.Methods.List) == 0 {
-				pass.Reportf(e.Pos(), "use any instead of an empty interface")
-			}
+	astInspector.Preorder([]ast.Node{(*ast.InterfaceType)(nil)}, func(node ast.Node) {
+		if len(node.(*ast.InterfaceType).Methods.List) == 0 {
+			pass.Reportf(node.Pos(), "use any instead of an empty interface")
 		}
 	})
 	return
