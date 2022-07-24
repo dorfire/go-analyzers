@@ -3,7 +3,7 @@ load("@io_bazel_rules_go//go:def.bzl", "go_library")
 go_library(
     name = "onlyany",
     srcs = ["onlyany.go"],
-    importpath = "github.com/dorfire/go-analyzers/onlyany",
+    importpath = "github.com/dorfire/go-analyzers/src/onlyany",
     visibility = ["//visibility:public"],
     deps = [
         "@org_golang_x_tools//go/analysis",
