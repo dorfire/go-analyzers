@@ -1,6 +1,6 @@
 module github.com/dorfire/go-analyzers
 
-go 1.18
+go 1.19
 
 require (
 	github.com/samber/lo v1.21.0
