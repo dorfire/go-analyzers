@@ -3,7 +3,7 @@ module github.com/dorfire/go-analyzers
 go 1.18
 
 require (
-	github.com/samber/lo v1.21.0
+	github.com/samber/lo v1.34.0
 	golang.org/x/tools v0.1.10
 )
 
